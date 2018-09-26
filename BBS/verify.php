@@ -14,5 +14,6 @@ if(is_array($row)){
 	echo "</script>";
 }else{
 	echo "登录失败!";
+	header("Refresh:2;url=login.php");
 }
 ?>
