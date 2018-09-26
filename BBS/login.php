@@ -1,6 +1,4 @@
-<?php
 
-?>
 <html>
 <body>
 <b>用户登录</b><br><br>

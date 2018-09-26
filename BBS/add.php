@@ -13,13 +13,11 @@ if($_POST['submit']){
 	}
 
 }
-session_start();
-$_Session['username'] = "jack";
 ?>
 
 <?php
 //页面跳转，实现方式为javascript 
-$url = "list.php";
+$url = "index.php";
 echo "<script>";
 echo "window.location.href='$url'";
 echo "</script>";

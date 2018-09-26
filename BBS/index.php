@@ -1,18 +1,29 @@
 <html>
 <head>
 <?php
-include("conn.php");
 session_start();
-//$_Session['username'] = "jack";
-print_r($_Session);
-$username = @$_Session['username'];
-
-//echo "session:$username";
+include("conn.php");
+$username = @$_SESSION['username'];
 ?>
 <link href="css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<a href="./add.html">发布留言</a>
+<?php 
+if(isset($username)){
+	echo "当前用户:".$username;
+}
+?>
+<?php 
+if(isset($username)){
+?>
+	
+	<form action="logout.php">
+	&nbsp&nbsp&nbsp<input type="submit" value="退出登录">
+	</form>
+	
+<?php }?>
+
+<br><a href="./login_verify.php">发布留言</a>
 <table width=800 border=1>
 <?php
 $sql = 'select * from message order by id desc';
