@@ -10,11 +10,18 @@ title varchar(50) not null,
 content text not null)
 engine=InnoDB DEFAULT charset=utf8 auto_increment=1';
 $res = mysql_query($sql);
+mysql_query('create database user charset uft8');
+$sql_register = 'CREATE TABLE user(username varchar(10) not null,pwd varchar(10) not null)';
+$res1 = mysql_query($sql_register);
 if($res){
-	echo '创建成功';
+	echo '创建message表成功';
 }else{
-	echo '创建失败';
+	echo '创建message表失败';
 }
-	
+if($res1){
+	echo '创建user表成功';
+}else{
+	echo '创建user表失败';
+}
 
 ?>
